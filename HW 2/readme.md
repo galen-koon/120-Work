@@ -41,3 +41,5 @@ Here is my screenshot of my workspace in Atom.
 
 Also, here is a screenshot of my code and the corresponding preview on the right.  It seems like in the preview the list shows up as I want it to, but in the readme.md preview in GitHub it doesn't.
 ![Screenshot of Lists](Screen Shot 2017-09-14 at 2.02.24 AM.png)
+
+Also, I'm not seeing the images show up in my preview on GitHub.  This third screenshot is proof they are attached. ![Third screenshot, proof](Screen Shot 2017-09-14 at 2.10.08 AM.png)
