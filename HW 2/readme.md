@@ -38,3 +38,6 @@ I found this leson extremely useful and fairly enjoyable as well.  I am definite
 
 Here is my screenshot of my workspace in Atom.
 ![Image of my editor](Screen Shot 2017-09-14 at 1.53.58 AM.png)
+
+Also, here is a screenshot of my code and the corresponding preview on the right.  It seems like in the preview the list shows up as I want it to, but in the readme.md preview in GitHub it doesn't.
+![Screenshot of Lists](Screen Shot 2017-09-14 at 2.02.24 AM.png)
