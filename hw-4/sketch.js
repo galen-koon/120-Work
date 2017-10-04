@@ -5,7 +5,7 @@ function setup() {
 }
 function draw() {
   //background color
-  background( rgb(165, 250, 186));
+  background( 'rgb(165, 250, 186)');
   
 
 
