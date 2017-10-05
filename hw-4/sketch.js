@@ -80,6 +80,70 @@ function draw() {
   fill('rgb(229, 233, 154)');
   ellipse( 0, -75, 190, 175);
 
+  //Mouth
+  fill(0);
+  //I'm going to be smiling
+  arc( 0, -45, 35, 40, radians(350), radians(190), PI);
+
+  //Nose
+  fill(0);
+  triangle( 0, -80, 10, -65, -10, -65);
+
+  //Eyes
+  //Left Eye
+  push();
+  translate( -44, -100);
+
+  fill(255);
+  ellipse( 0, 0, 45, 35);
+  //noFill();
+  fill('rgb(84, 78, 67)');
+  ellipse( 0, 0, 30, 27);
+  fill(0);
+  ellipse( 0, 0, 18);
+  //Eyebrows
+  fill('rgb(60, 55, 42)');
+  quad( -30, -20, -35, -25, 20, -35, 18, -30);
+  pop();
+
+  //Right Eye
+  push();
+  translate( 44, -100);
+  fill(255);
+  ellipse( 0, 0, 45, 35);
+  //noFill();
+  fill('rgb(84, 78, 67)');
+  ellipse( 0, 0, 30, 27);
+  fill(0);
+  ellipse( 0, 0, 18);
+  //Eyebrows
+  fill('rgb(60, 55, 42)');
+  quad( 30, -20, 35, -25, -20, -35, -18, -30);
+  pop();
+
+  //Hair. I have curly brown hair that sometimes looks like an afro. I was not sure how best to recreate that here.
+  push();
+  translate( 0, -220);
+  scale( 1, -1.5);
+  fill('rgb(60, 55, 42)');
+  arc( 0, -45, 140, 80, radians(350), radians(190), PI);
+  pop();
+
+  pop();
+  //Ends head sequence
+
+  pop();
+  //Ends self portrait sequence
+
+  
+
+
+
+
+
+
+
+
 
 
 
