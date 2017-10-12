@@ -1,3 +1,8 @@
+
+//this sketch animates a car driving around a stoplight.
+//the car will randomly change colors if the mouse is clicked. 
+
+
 //creating a variable for red, green, and blue color values
 var r, g, b;
 //this will be needed to determine the color of the car later on
