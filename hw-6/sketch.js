@@ -56,7 +56,7 @@ var max_cir_mvmt = 10;
 //creating the set up function, creating a canvas with a background and setting framerate
 function setup(){
   createCanvas(windowWidth, windowHeight);
-  background('orange');
+  background('white');
   frameRate(60);
 
 }
@@ -91,7 +91,7 @@ function draw(){
 
 //this will constrain the black circles to a specific area of the canvas
   cir_x.x = random(0, (frameCount * 0.5));
-  cir_y.y = random(400, random((height % 100), (height % 50), (height % 25), (height % 15), (height % 7)));
+  cir_y.y = random(height, random((height % 100), (height % 50), (height % 25), (height % 15), (height % 7)));
 
 //creating the randomly colored triangles
   push();
@@ -132,5 +132,5 @@ function draw(){
 
 //creating a feature that resets the canvas when the mouse is pressed
 function mousePressed(){
-  background('orange');
+  background('white');
 }
