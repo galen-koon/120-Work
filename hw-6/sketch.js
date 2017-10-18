@@ -1,5 +1,4 @@
-//defining some global variables
-
+//defining some global variables that can manipulated later
 var obj_1 = {
   x: 1,
   y: 1
@@ -40,10 +39,9 @@ var cir_y = {
   y: 0
 }
 
-
-var cir_min = 10;
-var cir_max = 300;
-
+//some constant global variables
+var cir_min = (8);
+var cir_max = (2);
 var max_cir_mvmt = 10;
 
 
@@ -52,7 +50,7 @@ var max_cir_mvmt = 10;
 function setup(){
   createCanvas(windowWidth, windowHeight);
   background('orange');
-  frameRate(40);
+  frameRate(60);
 
 
 }
@@ -61,11 +59,11 @@ function setup(){
 
 //creating the draw sandbox
 function draw(){
-//defining some variables that will change every time draw is called
+
 //specifying no cursor
   noCursor( mouseX, mouseY);
-
-
+  var yc = constrain( mouseY, 10, (height-10));
+//defining some variables that will change every time draw is called
   obj_1.x = random(0, width);
   obj_1.y = random(0, height);
   obj_2.x = random(0, width);
@@ -73,35 +71,38 @@ function draw(){
   obj_3.x = random(0, width);
   obj_3.y = random(0, height);
 
-  col.r = random(0, 255);
-  col.g = random(0, 255);
-  col.b = random(0, 255);
+  col.r = floor(random(256));
+  col.g = floor(random(256));
+  col.b = floor(random(256));
 
-  col_2.r = random(0, 255);
-  col_2.g = random(0, 255);
-  col_2.b = random(0, 255);
+  col_2.r = floor(random(256));
+  col_2.g = floor(random(256));
+  col_2.b = floor(random(256));
 
-  col_3.r = random(0, 255);
-  col_3.g = random(0, 255);
-  col_3.b = random(0, 255);
+  col_3.r = floor(random(256));
+  col_3.g = floor(random(256));
+  col_3.b = floor(random(256));
 
-  cir_x.x = random(0, width);
-  cir_y.y = random(0, height);
+  cir_x.x = random(0, (width * 0.5));
+  cir_y.y = random(400, random((height % 100), (height % 50), (height % 25), (height % 15), (height % 7)));
 
 //creating the randomly colored triangles
   push();
+//randomly colored
   fill( col.r, col.g, col.b);
   stroke(12);
+//randomly sized
   triangle( obj_1.x, obj_1.y, obj_2.x, obj_2.y, obj_3.x, obj_3.y);
   pop();
 
 //creating the circles that will follow the mouse
-  var cir_size = map( mouseX, 0, width, cir_min, cir_max);
+//the map command will change their size as the mouse moves across the screen
+  var cir_size = map( mouseX, 0, width, (mouseY / cir_min), (mouseY / cir_max));
   push();
-
+//randomly colored
   fill( col_2.r, col_2.g, col_2.b);
   stroke(12);
-  ellipse( mouseX, mouseY, cir_size);
+  ellipse( mouseX, yc, cir_size);
   pop();
 
 //creating the walking circles that will appear
@@ -110,6 +111,7 @@ function draw(){
   push();
 
   fill('black');
+//randomly sized
   ellipse( cir_x.x, cir_y.y, random( 0,400));
 //this is to randomly update their positions
   cir_x.x += random( -max_cir_mvmt, max_cir_mvmt);
