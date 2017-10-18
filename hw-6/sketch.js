@@ -1,3 +1,10 @@
+//The goal of this piece is to create an abstract battle
+//between the black circles and the colored triangles. The black circles
+//slowly crawl across the screen until it is all-out warfare.
+//The mouse is simply an innocent bystander who has gotten sucked
+//into the conflict.
+
+
 //defining some global variables that can manipulated later
 var obj_1 = {
   x: 1,
@@ -52,7 +59,6 @@ function setup(){
   background('orange');
   frameRate(60);
 
-
 }
 
 
@@ -83,7 +89,8 @@ function draw(){
   col_3.g = floor(random(256));
   col_3.b = floor(random(256));
 
-  cir_x.x = random(0, (width * 0.5));
+//this will constrain the black circles to a specific area of the canvas
+  cir_x.x = random(0, (frameCount * 0.5));
   cir_y.y = random(400, random((height % 100), (height % 50), (height % 25), (height % 15), (height % 7)));
 
 //creating the randomly colored triangles
@@ -117,12 +124,6 @@ function draw(){
   cir_x.x += random( -max_cir_mvmt, max_cir_mvmt);
   cir_y.y += random( -max_cir_mvmt, max_cir_mvmt);
   pop();
-
-
-
-
-
-
 
 
 
