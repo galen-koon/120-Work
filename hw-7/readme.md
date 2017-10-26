@@ -1,6 +1,6 @@
 ### Galen Koon, 50
 
-[Live Sketch Link](Your Live Link)
+[Live Sketch](https://galen-koon.github.io/120-Work/hw-7/)
 
 
 # HW 7 | Describe then Alter the Bouncing Ball
