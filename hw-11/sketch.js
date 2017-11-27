@@ -1,20 +1,27 @@
 //create a variable for a laser object
-let laser;
+let laser = [];
 
 
 function setup(){
   createCanvas( windowWidth, windowHeight);
-  laser = new Laser(10, 10, 800, 800);
+  background(0);
+  for( let i = 0; i < 20; i++){
+    laser[i] = new Laser( 20, 20, 40, 40);
+  }
+
 }
 
 
 function draw(){
-  background(0);
 
 
-  laser.display();
-  laser.move();
-  laser.edgeHit();
+  for( let i = 0; i < laser.length; i++){
+    laser[i].display();
+    laser[i].move();
+    laser[i].edgeHit();
+  }
+
+
 }
 
 
@@ -52,21 +59,33 @@ class Laser{
   }
 
   edgeHit(){
-    // check if the ball has hit a vertical wall (left or right walls)
+
         if (this.posX1 >= width || this.posX1 <= 0) {
             this.deltaX1 *= -1;
             this.deltaX2 *= -1;
         }
-        // check if the ball has hit a horizontal wall (top or bottom walls)
+
         if (this.posY1 >= height || this.posY1 <= 0) {
             this.deltaY1 *= -1;
             this.deltaY2 *= -1;
-        
+
 
   }
 
-
-
+}
 
 }
+
+function mousePressed(){
+  for( let i = 0; i < 20; i++){
+    laser[i] = new Laser( 20, 20, 40, 40);
+  }
+
+  for( let i = 0; i < laser.length; i++){
+    laser[i].display();
+    laser[i].move();
+    laser[i].edgeHit();
+  }
+
+
 }
