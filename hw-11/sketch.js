@@ -16,6 +16,7 @@ function draw(){
 
 
   for( let i = 0; i < laser.length; i++){
+    laser[i].laserCheck(lasers, i);
     laser[i].display();
     laser[i].move();
     laser[i].edgeHit();
@@ -74,6 +75,22 @@ class Laser{
 
 }
 
+
+    laserCheck(otherLasers, myId){
+    // for loop touches each of the balls in the array
+    for (let n = 0; n < otherLasers.length; n++) {
+        // if n != myId, then check for touching
+        // otherwise, its ME and we need to skip
+        if (n != myId) {
+            let d = dist(this.posX1, this.posY1, otherLasers[n].posX1, otherLasers[n].posY1);
+            let combinedR = this.posY1 + otherLasers[n].posY1;
+
+            if (d <= combinedR) {
+                this.deltaX *= -1;
+                this.deltaY *= -1;
+  }
+}
+}
 }
 
 function mousePressed(){
@@ -86,6 +103,6 @@ function mousePressed(){
     laser[i].move();
     laser[i].edgeHit();
   }
-
+background(0);
 
 }
